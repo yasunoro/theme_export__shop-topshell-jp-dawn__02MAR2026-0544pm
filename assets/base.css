@@ -4145,23 +4145,14 @@ details-disclosure > details {
   }
 }
 
-/* 3. サブタイトル（他セクションと同じ直接<p>方式） */
-#shopify-section-template--20939988861161__featured_collection .featured-collection__subtitle {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+/* 3. 説明文（サブタイトル）の設定 */
+#shopify-section-template--20939988861161__featured_collection .rich-text__text,
+#shopify-section-template--20939988861161__featured_collection .collection__description {
   font-size: 16px !important;
-  font-weight: 600 !important;
   color: #333 !important;
   text-align: center !important;
-  margin: 10px 0 0 0 !important;
-  letter-spacing: 0.03em !important;
-  line-height: 1.4 !important;
-}
-@media screen and (max-width: 749px) {
-  #shopify-section-template--20939988861161__featured_collection .featured-collection__subtitle {
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    margin-top: 8px !important;
-  }
+  margin: 0 auto !important;
+  font-weight: 400 !important;
 }
 
 /* 4. スライドバー（横スクロール）の設定 */

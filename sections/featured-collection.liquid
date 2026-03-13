@@ -78,9 +78,6 @@
           {{ section.settings.title }}
         </h2>
       {%- endif -%}
-      {%- if section.settings.subtitle != blank -%}
-        <p class="featured-collection__subtitle">{{ section.settings.subtitle | escape }}</p>
-      {%- endif -%}
       {%- if section.settings.description != blank
         or section.settings.show_description
         and section.settings.collection.description != empty
@@ -277,11 +274,6 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "サブタイトル"
     },
     {
       "type": "richtext",
