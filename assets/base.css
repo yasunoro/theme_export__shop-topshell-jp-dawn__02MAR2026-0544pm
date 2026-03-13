@@ -4429,20 +4429,25 @@ details-disclosure > details {
     gap: 15px !important;
   }
 
-  /* 画像（上側） */
+  /* 画像（上側）: BLOGカードと同じ正方形クロップ */
   #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
     order: -1 !important;
     width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 1 / 1 !important; /* BLOGカードに近い正方形 */
+    aspect-ratio: 1 / 1 !important;
+    position: relative !important;
+    overflow: hidden !important;
     margin: 0 !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 15px !important;
   }
-  
+
   #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    display: block !important;
   }
 
   /* テキスト（下側） */
@@ -4453,16 +4458,16 @@ details-disclosure > details {
     padding: 0 !important;
   }
 
-  /* ▼【修正】各カラムのタイトル（h3, aタグ含む全てを強制変更） */
+  /* タイトル: BLOGに合わせたフォントサイズ・ウェイト */
   #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__heading,
   #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info h3,
   #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info a {
-    font-size: 20px !important; /* PC用サイズ：特大 */
+    font-size: 20px !important;
     font-weight: 400 !important;
     line-height: 1.4 !important;
     margin: 0 !important;
-    margin-top: 0 !important;
     color: #333 !important;
+    text-decoration: none !important;
   }
 }
 
