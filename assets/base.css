@@ -4254,7 +4254,7 @@ details-disclosure > details {
 #shopify-section-template--20939988861161__multicolumn_6e9cGq {
   margin-top: 60px !important;
   margin-bottom: 80px !important;
-  background-color: #ffffff !important;
+  background-color: hotpink !important; /* 診断テスト：ピンクになれば届いている */
 }
 
 /* TS: BLOG section タイトルとサブタイトルの間隔を CATEGORY に合わせる */
@@ -4467,17 +4467,10 @@ details-disclosure > details {
 }
 
 /* =========================================================
-   【診断テスト2】クラスセレクタ (0,3,0) でオレンジ背景（確認後削除）
+   【診断テスト】ID+クラスセレクタで カード背景オレンジ（確認後削除）
    ========================================================= */
-.section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card {
+#shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list__item .multicolumn-card {
   background: orange !important;
-}
-
-/* =========================================================
-   【診断テスト1】ID+クラスセレクタ レッドボーダー（確認後削除）
-   ========================================================= */
-#shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
-  border: 4px solid red !important;
 }
 
 /* =========================================================
