@@ -4135,7 +4135,7 @@ details-disclosure > details {
   font-weight: 400 !important;
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 0 !important;
   color: #000 !important;
   text-align: center !important;
 }
@@ -4148,11 +4148,21 @@ details-disclosure > details {
 /* 3. 説明文（サブタイトル）の設定 */
 #shopify-section-template--20939988861161__featured_collection .rich-text__text,
 #shopify-section-template--20939988861161__featured_collection .collection__description {
-  font-size: 16px !important; /* ★14pxから16pxへ変更 */
+  font-size: 16px !important;
+  font-weight: 600 !important;
   color: #333 !important;
   text-align: center !important;
-  margin: 0 auto !important;
-  font-weight: 400 !important;
+  margin: 10px auto 0 auto !important; /* PC: 他セクションと統一 */
+}
+#shopify-section-template--20939988861161__featured_collection .collection__description p {
+  margin: 0 !important; /* <p>のブラウザデフォルトmarginを除去 */
+}
+@media screen and (max-width: 749px) {
+  #shopify-section-template--20939988861161__featured_collection .collection__description {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    margin-top: 8px !important; /* SP: 他セクションと統一 */
+  }
 }
 
 /* 4. スライドバー（横スクロール）の設定 */
