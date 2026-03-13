@@ -4126,6 +4126,7 @@ details-disclosure > details {
   text-align: center !important;
   flex-direction: column !important;
   margin-bottom: 40px !important;
+  gap: 0 !important;
 }
 
 /* ▼ タイトル文字サイズ（PCで大きくする） */
@@ -4259,6 +4260,23 @@ details-disclosure > details {
 /* TS: BLOG section タイトルとサブタイトルの間隔を CATEGORY に合わせる */
 .blog .title-wrapper-with-link {
   row-gap: 0 !important;
+}
+
+/* TS: BLOG カスタムLiquid - gap と ::after margin を統一 */
+.blog-section-wrapper .title-wrapper-with-link {
+  gap: 0 !important;
+}
+.blog-section-wrapper .title-wrapper-with-link::after {
+  margin-top: 10px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+@media screen and (max-width: 749px) {
+  .blog-section-wrapper .title-wrapper-with-link::after {
+    margin-top: 8px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+  }
 }
 
 /* 2. タイトルエリア（FEATURE / 特集）のデザイン */
