@@ -4346,7 +4346,7 @@ details-disclosure > details {
   }
 
   /* カード設定（横並び Flex） */
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card {
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -4359,15 +4359,15 @@ details-disclosure > details {
   }
 
   /* 画像（左側） */
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__image-wrapper {
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__image-wrapper {
     width: 130px !important;  /* BLOGと同じサムネサイズ */
     height: 130px !important;
     flex-shrink: 0 !important;
     margin: 0 !important;
     order: -1 !important;
   }
-  
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__image-wrapper img {
+
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__image-wrapper img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -4375,15 +4375,15 @@ details-disclosure > details {
   }
 
   /* テキスト（右側） */
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__info {
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__info {
     text-align: left !important;
     padding: 0 !important;
   }
-  
+
   /* タイトル: font-sizeは汎用CSSに任せてリバート */
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__heading,
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__info h3,
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__info a {
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__heading,
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__info h3,
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__info a {
     margin: 0 !important;
     color: #333 !important;
     line-height: 1.5 !important;
