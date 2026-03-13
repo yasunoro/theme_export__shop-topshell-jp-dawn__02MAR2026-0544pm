@@ -4247,11 +4247,11 @@ details-disclosure > details {
 
 /* =========================================================
    FEATURE (特集) セクション FSF完全再現【フォントサイズ強制適用版】
-   Target: template--21260600934633__multicolumn_6e9cGq
+   Target: template--20939988861161__multicolumn_6e9cGq
    ========================================================= */
 
 /* 1. セクション全体の余白設定 */
-#shopify-section-template--21260600934633__multicolumn_6e9cGq {
+#shopify-section-template--20939988861161__multicolumn_6e9cGq {
   margin-top: 60px !important;
   margin-bottom: 80px !important;
   background-color: #ffffff !important;
@@ -4280,7 +4280,7 @@ details-disclosure > details {
 }
 
 /* 2. タイトルエリア（FEATURE / 特集）のデザイン */
-#shopify-section-template--21260600934633__multicolumn_6e9cGq .title-wrapper-with-link {
+#shopify-section-template--20939988861161__multicolumn_6e9cGq .title-wrapper-with-link {
   text-align: center !important;
   margin-bottom: 24px !important; /* サブタイトル下〜生地を狭く（BLOGと同一） */
   display: flex !important;
@@ -4290,7 +4290,7 @@ details-disclosure > details {
 }
 
 /* タイトル文字（スマホ初期値） */
-#shopify-section-template--21260600934633__multicolumn_6e9cGq .title {
+#shopify-section-template--20939988861161__multicolumn_6e9cGq .title {
   font-size: 26px !important;
   font-weight: 400 !important;
   letter-spacing: 0.05em !important;
@@ -4300,7 +4300,7 @@ details-disclosure > details {
 }
 /* PCではタイトルをさらに大きく */
 @media screen and (min-width: 750px) {
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .title {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .title {
     font-size: 36px !important;
   }
 }
@@ -4308,7 +4308,7 @@ details-disclosure > details {
 /* サブタイトル「特集」は上記 TS: 4セクション サブタイトル統一 で統一 */
 
 /* 3. VIEW ALLボタンを非表示 */
-#shopify-section-template--21260600934633__multicolumn_6e9cGq .button {
+#shopify-section-template--20939988861161__multicolumn_6e9cGq .button {
   display: none !important;
 }
 
@@ -4320,7 +4320,7 @@ details-disclosure > details {
    ========================================================= */
 @media screen and (max-width: 749px) {
   /* リスト設定 */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-list {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
@@ -4328,19 +4328,19 @@ details-disclosure > details {
     margin: 0 !important;
   }
 
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .page-width {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .page-width {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
   }
   
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-list__item {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list__item {
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
   }
 
   /* カード設定（横並び Flex） */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -4353,7 +4353,7 @@ details-disclosure > details {
   }
 
   /* 画像（左側） */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
     width: 130px !important;  /* BLOGと同じサムネサイズ */
     height: 130px !important;
     flex-shrink: 0 !important;
@@ -4361,7 +4361,7 @@ details-disclosure > details {
     order: -1 !important;
   }
   
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__image-wrapper img {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -4369,15 +4369,15 @@ details-disclosure > details {
   }
 
   /* テキスト（右側） */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info {
     text-align: left !important;
     padding: 0 !important;
   }
   
   /* ▼【修正】各カラムのタイトル（h3, aタグ含む全てを強制変更） */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__heading,
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info h3,
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info a {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__heading,
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info h3,
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info a {
     font-size: 16px !important; /* スマホ用サイズ */
     margin: 0 !important;
     color: #333 !important;
@@ -4393,7 +4393,7 @@ details-disclosure > details {
    ========================================================= */
 @media screen and (min-width: 750px) {
   /* リスト設定 */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-list {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
@@ -4405,14 +4405,14 @@ details-disclosure > details {
   }
 
   /* リストアイテム */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-list__item {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list__item {
     width: calc(33.333% - 40px) !important;
     max-width: none !important;
     padding: 0 !important;
   }
 
   /* カード設定（縦積み） */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -4424,7 +4424,7 @@ details-disclosure > details {
   }
 
   /* 画像（上側） */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
     order: -1 !important;
     width: 100% !important;
     height: auto !important;
@@ -4433,14 +4433,14 @@ details-disclosure > details {
     margin-bottom: 12px !important;
   }
   
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__image-wrapper img {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
   }
 
   /* テキスト（下側） */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info {
     order: 1 !important;
     text-align: left !important;
     width: 100% !important;
@@ -4448,9 +4448,9 @@ details-disclosure > details {
   }
 
   /* ▼【修正】各カラムのタイトル（h3, aタグ含む全てを強制変更） */
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__heading,
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info h3,
-  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info a {
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__heading,
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info h3,
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info a {
     font-size: 20px !important; /* PC用サイズ：特大 */
     font-weight: 400 !important;
     line-height: 1.4 !important;
