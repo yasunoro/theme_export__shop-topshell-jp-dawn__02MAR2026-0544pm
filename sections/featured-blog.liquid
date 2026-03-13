@@ -37,6 +37,9 @@
         >
           {{ section.settings.heading }}
         </h2>
+        {%- if section.settings.subtitle != blank -%}
+          <p class="blog__subtitle">{{ section.settings.subtitle | escape }}</p>
+        {%- endif -%}
 
         {%- if section.settings.blog != blank
           and section.settings.show_view_all
@@ -249,6 +252,11 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "サブタイトル"
     },
     {
       "type": "header",

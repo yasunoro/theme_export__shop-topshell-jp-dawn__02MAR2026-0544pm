@@ -4730,10 +4730,11 @@ media-gallery {
   }
 
   /* SP: is-active のみ表示（デスクトップと同じ方式でサムネイル切り替え） */
-  .product__media-item:not(.is-active) {
+  /* 特異性を (0,3,0) に上げて .slider--mobile.grid--peek .grid__item (0,3,0) に勝つ */
+  .product__media-list .product__media-item:not(.is-active) {
     display: none !important;
   }
-  .product__media-item.is-active {
+  .product__media-list .product__media-item.is-active {
     display: block !important;
   }
 
@@ -4779,8 +4780,8 @@ media-gallery {
     transform: translateY(50%) !important;
     z-index: 100 !important;
     background-color: #ffffff !important;
-    width: 36px !important;
-    height: 36px !important;
+    width: 42px !important;
+    height: 42px !important;
     border-radius: 50% !important;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
     opacity: 1 !important;
@@ -4793,9 +4794,9 @@ media-gallery {
     content: "" !important;
     display: block !important;
     position: absolute !important;
-    width: 11px !important;
-    height: 11px !important;
-    border: 1px solid #000 !important;
+    width: 14px !important;
+    height: 14px !important;
+    border: 2px solid #000 !important;
     border-radius: 50% !important;
     top: 10px !important;
     left: 10px !important;
@@ -4805,11 +4806,11 @@ media-gallery {
     content: "" !important;
     display: block !important;
     position: absolute !important;
-    width: 6px !important;
-    height: 1px !important;
+    width: 8px !important;
+    height: 2px !important;
     background: #000 !important;
-    top: 21px !important;
-    left: 20px !important;
+    top: 24px !important;
+    left: 22px !important;
     transform: rotate(45deg) !important;
   }
 
