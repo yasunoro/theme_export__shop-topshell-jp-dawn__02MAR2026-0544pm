@@ -4380,11 +4380,10 @@ details-disclosure > details {
     padding: 0 !important;
   }
   
-  /* ▼【修正】各カラムのタイトル（h3, aタグ含む全てを強制変更） */
+  /* タイトル: font-sizeは汎用CSSに任せてリバート */
   #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__heading,
   #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info h3,
   #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info a {
-    font-size: 16px !important; /* スマホ用サイズ */
     margin: 0 !important;
     color: #333 !important;
     line-height: 1.5 !important;
