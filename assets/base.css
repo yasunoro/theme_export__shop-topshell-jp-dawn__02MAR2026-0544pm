@@ -3606,6 +3606,7 @@ details-disclosure > details {
   justify-content: center !important; /* 枠自体を中央へ */
   text-align: center !important;      /* 文字を中央へ */
   margin-bottom: 4rem !important;     /* カードとの距離を少しとる */
+  row-gap: 0 !important;              /* TS: タイトルとサブタイトルの行間を詰める */
 }
 
 .multicolumn .title-wrapper-with-link .title {
@@ -3613,6 +3614,7 @@ details-disclosure > details {
   font-weight: 500 !important;    /* 【ご希望】600 -> 500 (少し細く) */
   letter-spacing: 0.05rem !important;
   text-align: center !important;
+  margin-bottom: 0 !important; /* TS: FEATURE タイトルとサブタイトルの間を blog と同じに */
 }
 
 /* ---------------------------------------------------------
@@ -3621,21 +3623,22 @@ details-disclosure > details {
    --------------------------------------------------------- */
 @media screen and (min-width: 750px) {
   .multicolumn .multicolumn-card {
-    background: #f2f2f2 !important;
-    border-radius: 20px !important;
+    background: transparent !important; /* 特集/BLOGと統一するためグレー背景を削除 */
+    border-radius: 0 !important;
     min-height: auto !important;
-    padding: 40px 30px !important;
+    padding: 0 !important;
     box-sizing: border-box !important;
     
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
-    align-items: center !important; /* カードの中身も中央揃え */
+    align-items: center !important;
     gap: 30px !important;
   }
 
   .multicolumn .multicolumn-card__info {
-    display: contents !important;
+    /* display: contents を使うとブラウザによって中身が消えることがあるため無効化 */
+    display: block !important;
   }
 
   /* 1. タイトル（一番上） */
@@ -3687,8 +3690,8 @@ details-disclosure > details {
     display: flex !important;
     flex-direction: row !important;
     align-items: flex-start !important;
-    background: #f2f2f2 !important;
-    border-radius: 16px !important;
+    background: transparent !important; /* グレー背景削除 */
+    border-radius: 0 !important;
     padding: 20px 15px !important;
     min-height: auto !important;
     gap: 0 !important;
@@ -3696,7 +3699,8 @@ details-disclosure > details {
 
   /* アイコン（左） */
   .multicolumn .multicolumn-list__item .multicolumn-card__image-wrapper {
-    width: 60px !important;
+    width: 130px !important;
+    height: 130px !important;
     flex-shrink: 0 !important;
     margin: 0 15px auto 0 !important;
     padding-top: 3px !important;
@@ -3708,8 +3712,8 @@ details-disclosure > details {
   
   .multicolumn .multicolumn-list__item .multicolumn-card__image-wrapper img {
     width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
+    height: 100% !important;
+    object-fit: cover !important;
     vertical-align: top !important;
   }
 
@@ -3744,6 +3748,35 @@ details-disclosure > details {
   }
 
   .multicolumn-card__info .button { display: none !important; }
+}
+
+/* =========================
+   TS: title-wrapper-with-link global overrides (migrated from platform_customizations)
+   Purpose: 全セクションの title-wrapper を縦積み中央揃えに統一
+   ========================= */
+.title-wrapper-with-link {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.title-wrapper-with-link .title {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+.title-wrapper-with-link .underlined-link {
+  display: inline-block;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* TS: multicolumn 全体リンクカード用（特集のみ想定） */
+.multicolumn-card--link {
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer !important;
 }
 
 /* =========================================================
@@ -4005,7 +4038,7 @@ details-disclosure > details {
   content: "›";
   font-size: 20px !important;
   color: #ccc !important;
-  font-family: sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   line-height: 1 !important;
   margin-left: 4px !important;
   font-weight: 300 !important;
@@ -4213,20 +4246,28 @@ details-disclosure > details {
 
 /* =========================================================
    FEATURE (特集) セクション FSF完全再現【フォントサイズ強制適用版】
-   Target: template--20939988861161__multicolumn_6e9cGq
+   Target: template--21260600934633__multicolumn_6e9cGq
    ========================================================= */
 
 /* 1. セクション全体の余白設定 */
-#shopify-section-template--20939988861161__multicolumn_6e9cGq {
+#shopify-section-template--21260600934633__multicolumn_6e9cGq {
   margin-top: 60px !important;
   margin-bottom: 80px !important;
   background-color: #ffffff !important;
 }
 
+/* TS: BLOG section タイトルとサブタイトルの間隔を FEATURE に合わせる */
+.blog-section-wrapper .title-wrapper-with-link {
+  row-gap: 0 !important;
+}
+.blog-section-wrapper .title-wrapper-with-link::after {
+  margin-top: 5px !important;
+}
+
 /* 2. タイトルエリア（FEATURE / 特集）のデザイン */
-#shopify-section-template--20939988861161__multicolumn_6e9cGq .title-wrapper-with-link {
+#shopify-section-template--21260600934633__multicolumn_6e9cGq .title-wrapper-with-link {
   text-align: center !important;
-  margin-bottom: 50px !important;
+  margin-bottom: 24px !important; /* サブタイトル下〜生地を狭く（BLOGと同一） */
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -4234,7 +4275,7 @@ details-disclosure > details {
 }
 
 /* タイトル文字（スマホ初期値） */
-#shopify-section-template--20939988861161__multicolumn_6e9cGq .title {
+#shopify-section-template--21260600934633__multicolumn_6e9cGq .title {
   font-size: 26px !important;
   font-weight: 400 !important;
   letter-spacing: 0.05em !important;
@@ -4244,24 +4285,15 @@ details-disclosure > details {
 }
 /* PCではタイトルをさらに大きく */
 @media screen and (min-width: 750px) {
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .title {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .title {
     font-size: 36px !important;
   }
 }
 
-/* サブタイトル「特集」★サイズアップ */
-#shopify-section-template--20939988861161__multicolumn_6e9cGq .title-wrapper-with-link::after {
-  content: "特集";
-  display: block;
-  font-size: 16px !important;
-  color: #333 !important;
-  font-weight: 400 !important;
-  margin-top: 5px !important;
-  letter-spacing: 0.05em !important;
-}
+/* サブタイトル「特集」は上記 TS: 4セクション サブタイトル統一 で統一 */
 
 /* 3. VIEW ALLボタンを非表示 */
-#shopify-section-template--20939988861161__multicolumn_6e9cGq .button {
+#shopify-section-template--21260600934633__multicolumn_6e9cGq .button {
   display: none !important;
 }
 
@@ -4273,22 +4305,27 @@ details-disclosure > details {
    ========================================================= */
 @media screen and (max-width: 749px) {
   /* リスト設定 */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
-    padding: 0 15px !important;
+    padding: 0 !important; /* BLOGに寄せて左端まで */
     margin: 0 !important;
   }
+
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .page-width {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
   
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list__item {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-list__item {
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
   }
 
   /* カード設定（横並び Flex） */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -4301,15 +4338,15 @@ details-disclosure > details {
   }
 
   /* 画像（左側） */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
-    width: 130px !important;
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
+    width: 130px !important;  /* BLOGと同じサムネサイズ */
     height: 130px !important;
     flex-shrink: 0 !important;
     margin: 0 !important;
     order: -1 !important;
   }
   
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper img {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__image-wrapper img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
@@ -4317,15 +4354,15 @@ details-disclosure > details {
   }
 
   /* テキスト（右側） */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info {
     text-align: left !important;
     padding: 0 !important;
   }
   
   /* ▼【修正】各カラムのタイトル（h3, aタグ含む全てを強制変更） */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__heading,
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info h3,
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info a {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__heading,
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info h3,
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info a {
     font-size: 16px !important; /* スマホ用サイズ */
     margin: 0 !important;
     color: #333 !important;
@@ -4341,11 +4378,11 @@ details-disclosure > details {
    ========================================================= */
 @media screen and (min-width: 750px) {
   /* リスト設定 */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-list {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     gap: 40px !important;
     width: 100% !important;
     max-width: 1200px !important;
@@ -4353,14 +4390,14 @@ details-disclosure > details {
   }
 
   /* リストアイテム */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list__item {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-list__item {
     width: calc(33.333% - 40px) !important;
-    max-width: 350px !important;
+    max-width: none !important;
     padding: 0 !important;
   }
 
   /* カード設定（縦積み） */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -4372,23 +4409,23 @@ details-disclosure > details {
   }
 
   /* 画像（上側） */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__image-wrapper {
     order: -1 !important;
     width: 100% !important;
     height: auto !important;
-    aspect-ratio: 1 / 1 !important;
+    aspect-ratio: 1 / 1 !important; /* BLOGカードに近い正方形 */
     margin: 0 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 12px !important;
   }
   
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__image-wrapper img {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__image-wrapper img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
   }
 
   /* テキスト（下側） */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info {
     order: 1 !important;
     text-align: left !important;
     width: 100% !important;
@@ -4396,9 +4433,9 @@ details-disclosure > details {
   }
 
   /* ▼【修正】各カラムのタイトル（h3, aタグ含む全てを強制変更） */
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__heading,
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info h3,
-  #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-card__info a {
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__heading,
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info h3,
+  #shopify-section-template--21260600934633__multicolumn_6e9cGq .multicolumn-card__info a {
     font-size: 20px !important; /* PC用サイズ：特大 */
     font-weight: 400 !important;
     line-height: 1.4 !important;
@@ -4422,7 +4459,7 @@ details-disclosure > details {
 
 /* 2. メニュー項目のデザイン（線と文字） */
 .menu-drawer__menu-item {
-  font-family: sans-serif !important; /* シンプルなフォント */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* シンプルなフォント */
   font-size: 15px !important;       /* 文字サイズ */
   letter-spacing: 0.05em !important; /* 文字間隔 */
   color: #000000 !important;        /* 文字色は黒 */
@@ -4610,13 +4647,18 @@ details:not([open]) .menu-drawer__menu li {
   }
 }
 
+/* media-gallery カスタム要素をブロックレベルに（デフォルトinlineだとレイアウト崩れ防止） */
+media-gallery {
+  display: block !important;
+}
+
 /* =========================================================
    1. カートボタンのデザイン（ユーザー様設定済み・維持）
    ========================================================= */
 .product-form__buttons .button,
 .shopify-payment-button__button {
   border-radius: 0 !important;
-  font-family: sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: 400 !important;
   letter-spacing: 0.05em !important;
 }
@@ -4652,18 +4694,26 @@ details:not([open]) .menu-drawer__menu li {
   
   /* メイン画像を画面幅いっぱいに */
   .product__media-wrapper {
-    margin-left: -1.5rem !important;  
-    margin-right: -1.5rem !important; 
+    margin-left: -1.5rem !important;
+    margin-right: -1.5rem !important;
     width: calc(100% + 3rem) !important;
     max-width: none !important;
     padding: 0 !important;
+  }
+
+  /* GalleryViewer の「ピーク効果」用負マージンを解除 → 正確な画面幅に */
+  .product__media-wrapper slider-component:not(.thumbnail-slider--no-slide) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
   }
 
   .product__media-list {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
-    column-gap: 0 !important; 
+    column-gap: 0 !important;
+    scroll-padding-left: 0 !important;
   }
 
   /* 個々の画像アイテム */
@@ -4679,14 +4729,29 @@ details:not([open]) .menu-drawer__menu li {
     position: relative !important;
   }
 
+  /* SP: is-active のみ表示（デスクトップと同じ方式でサムネイル切り替え） */
+  .product__media-item:not(.is-active) {
+    display: none !important;
+  }
+  .product__media-item.is-active {
+    display: block !important;
+  }
+
   /* 画像の枠の設定 */
   .product__media-item .global-media-settings,
   .product__media-item .media {
     width: 100% !important;
+    max-width: 100% !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     background: transparent !important;
+  }
+
+  /* product-media-container の幅制限を解除 */
+  .product__media-item .product-media-container {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   /* 画像本体 */
@@ -4709,9 +4774,9 @@ details:not([open]) .menu-drawer__menu li {
     align-items: center !important;
     justify-content: center !important;
     position: absolute !important;
-    top: auto !important;
-    bottom: 20px !important;
+    bottom: 0 !important;
     right: 20px !important;
+    transform: translateY(50%) !important;
     z-index: 100 !important;
     background-color: #ffffff !important;
     width: 36px !important;
@@ -4748,13 +4813,23 @@ details:not([open]) .menu-drawer__menu li {
     transform: rotate(45deg) !important;
   }
 
+  /* メイン画像: constrain-heightを解除してオリジナルアスペクト比を維持 */
+  .product__media-item .product-media-container.constrain-height .media {
+    padding-top: var(--ratio-percent) !important;
+  }
+
+  /* メイン画像下部マージン（ズームボタン + サムネイルとの間隔） */
+  main#MainContent media-gallery > slider-component:first-of-type {
+    margin-bottom: 20px !important;
+  }
+
   /* サムネイル：距離確保・幕なし・4列並び */
-  .product__media-gallery .thumbnail-slider,
-  .product__media-gallery .thumbnail-list {
+  main#MainContent media-gallery .thumbnail-slider,
+  main#MainContent media-gallery .thumbnail-list {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
-    margin-top: 50px !important; 
+    margin-top: 0 !important;
     padding: 0 15px !important;
     gap: 10px !important;
     justify-content: flex-start !important;
@@ -4764,7 +4839,7 @@ details:not([open]) .menu-drawer__menu li {
 
   /* サムネイル画像の設定 */
   .thumbnail-list__item.slider__slide {
-    width: 22% !important;
+    width: 33% !important;
     flex: 0 0 auto !important;
     padding: 0 !important;
     border: none !important;
@@ -4773,6 +4848,11 @@ details:not([open]) .menu-drawer__menu li {
   }
   .thumbnail-list__item.slider__slide:hover {
     opacity: 1 !important;
+  }
+  /* SP: サムネイルボタンをタップとして認識させる（スクロールと誤判定防止） */
+  .thumbnail-list__item.slider__slide .thumbnail {
+    touch-action: manipulation !important;
+    cursor: pointer !important;
   }
   
   .thumbnail-list__item.slider__slide img {
@@ -4808,7 +4888,7 @@ details:not([open]) .menu-drawer__menu li {
 
 /* タイトル：スッキリとしたサイズ */
 .product__title h1 {
-  font-family: sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 2rem !important; /* FSFに合わせて大きすぎず小さすぎず */
   font-weight: 400 !important;
   letter-spacing: 0.05em !important;
@@ -4819,7 +4899,7 @@ details:not([open]) .menu-drawer__menu li {
 
 /* メーカー名・SKU：サムネイルとの距離を確保 */
 .product__text.caption-with-letter-spacing {
-  font-family: sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 1.1rem !important;
   color: #666666 !important;
   margin-top: 4.0rem !important; /* サムネイル画像との距離 */
@@ -4829,7 +4909,7 @@ details:not([open]) .menu-drawer__menu li {
   letter-spacing: 0.05em !important;
 }
 .product__sku {
-  font-family: sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 1.1rem !important;
   color: #666666 !important;
   margin-top: 0 !important;
@@ -4842,7 +4922,7 @@ details:not([open]) .menu-drawer__menu li {
 /* 価格表示：控えめで上品に */
 .price__container { align-items: baseline !important; margin-bottom: 0.5rem !important; }
 .price-item {
-  font-family: sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: 400 !important;
   font-size: 1.4rem !important;
   color: #000000 !important;
@@ -4911,7 +4991,7 @@ details:not([open]) .menu-drawer__menu li {
 
 /* タイトル文字：小さく */
 .product__accordion .accordion__title {
-  font-family: sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 1.2rem !important;
   font-weight: 600 !important; /* 少し太くして存在感を出す */
   color: #000000 !important;
@@ -4954,7 +5034,7 @@ details:not([open]) .menu-drawer__menu li {
 
 /* ついでに商品名などの文字サイズもFSF風に整える（任意） */
 .related-products .card__heading {
-  font-family: sans-serif !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 1.3rem !important;
   font-weight: 400 !important;
   letter-spacing: 0.05em !important;
@@ -5174,21 +5254,21 @@ body.template-collection .collection-hero__description{
    ========================= */
 
 .ts-category-list{
-  /* Title */
+  /* Title（CATEGORY 見出し＝NEW ARRIVALS と同一サイズに統一） */
   --ts-cat-title-size-pc: 30px;
-  --ts-cat-title-size-sp: 27px;
+  --ts-cat-title-size-sp: 24px;
   --ts-cat-title-weight: 500;
 
   /* Subtitle */
-  --ts-cat-subtitle-size-pc: 14px;
-  --ts-cat-subtitle-size-sp: 12px;
+  --ts-cat-subtitle-size-pc: 16px;
+  --ts-cat-subtitle-size-sp: 13px;
   --ts-cat-subtitle-weight: 600;
-  --ts-cat-subtitle-mb-pc: 25px;
-  --ts-cat-subtitle-mb-sp: 27px;
+  --ts-cat-subtitle-mb-pc: 50px;   /* カテゴリーから探すの下〜リスト上を約2行分あける */
+  --ts-cat-subtitle-mb-sp: 45px;
 
   /* Items */
-  --ts-cat-item-font-size-pc: 13.5px;
-  --ts-cat-item-font-size-sp: 12px;
+  --ts-cat-item-font-size-pc: 14px;
+  --ts-cat-item-font-size-sp: 11px;
   --ts-cat-item-font-weight: 600;
 }
 
@@ -5203,6 +5283,11 @@ body.template-collection .collection-hero__description{
   font-size: var(--ts-cat-title-size-pc) !important;
   font-weight: var(--ts-cat-title-weight) !important;
   letter-spacing: 0.02em !important;
+}
+@media screen and (min-width: 750px) {
+  .ts-category-list .section-header__title{
+    font-weight: 400 !important; /* PC: Regular（統一ブロックでも上書き） */
+  }
 }
 
 /* Subtitle */
@@ -5219,6 +5304,12 @@ body.template-collection .collection-hero__description{
   text-align: center !important;
   font-size: var(--ts-cat-item-font-size-pc) !important;
   font-weight: var(--ts-cat-item-font-weight) !important;
+}
+@media screen and (min-width: 750px) {
+  .ts-category-list .category_item > a,
+  .ts-category-list .category_item > .ts-disabled{
+    font-weight: 500 !important; /* PC: ウェイトを少し下げる */
+  }
 }
 
 /* SP */
@@ -5243,6 +5334,104 @@ body.template-collection .collection-hero__description{
   .ts-category-list .category_item > .ts-disabled{
     display: flex !important;
     align-items: center !important;
+  }
+}
+
+/* =========================
+   TS: 全セクション見出しの統一（CATEGORY / NEW ARRIVALS / FEATURE / BLOG）
+   同じフォント・サイズ・ウェイトに揃える
+   PC: 30px / SP: 26px（スマホで見出しをやや開いて見やすく） / weight: 500
+   font: Helvetica Neue と同じ場所（同一フォントスタック）で表示
+   ========================= */
+.ts-category-list .section-header__title,
+.collection .collection__title .title,
+.multicolumn .title-wrapper-with-link .title,
+.blog-section-wrapper .title {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 500 !important; /* Medium（SPはこのまま） */
+  letter-spacing: 0.06em !important;
+}
+@media screen and (min-width: 750px) {
+  .ts-category-list .section-header__title,
+  .collection .collection__title .title,
+  .multicolumn .title-wrapper-with-link .title,
+  .blog-section-wrapper .title {
+    font-weight: 400 !important; /* PCのみ Regular */
+  }
+}
+@media screen and (max-width: 749px) {
+  .ts-category-list .section-header__title,
+  .collection .collection__title .title,
+  .multicolumn .title-wrapper-with-link .title,
+  .blog-section-wrapper .title {
+    font-size: 26px !important;
+    line-height: 1.35 !important;
+  }
+}
+
+/* =========================
+   TS: 4セクション サブタイトル統一（サイズ・ウェイト少し上げ）
+   CATEGORY / NEW ARRIVALS / FEATURE(特集) / BLOG
+   PC: 16px weight 600 / SP: 13px weight 700
+   ========================= */
+/* NEW ARRIVALS: 見出しとサブタイトルを中央揃え */
+.collection .collection__title {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.collection .collection__title .title,
+.collection .collection__title .collection__description {
+  text-align: center !important;
+}
+
+.ts-category-list .section-header__subtitle,
+.collection .collection__title .collection__description,
+.multicolumn .multicolumn__subtitle,
+.blog .blog__subtitle,
+.blog .title-wrapper-with-link .blog__subtitle {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  margin: 6px 0 0 0 !important;
+  text-align: center !important;
+}
+.ts-category-list .section-header__subtitle {
+  margin-bottom: var(--ts-cat-subtitle-mb-pc) !important; /* カテゴリーから探すの下を約2行分 */
+}
+/* FEATURE/BLOG: タイトルとサブタイトルの間を詰める */
+.multicolumn .multicolumn__subtitle,
+.blog .blog__subtitle,
+.blog .title-wrapper-with-link .blog__subtitle {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 2px !important;
+}
+/* FEATURE/BLOG: サブタイトル下〜コンテンツ（生地）の余白を同じサイズで少し狭く */
+.multicolumn .title-wrapper-with-link,
+.blog .title-wrapper-with-link {
+  margin-bottom: 24px !important;
+  row-gap: 0 !important; /* TS: タイトルとサブタイトルの行間を詰める（PC・SP共通） */
+}
+@media screen and (max-width: 749px) {
+  .ts-category-list .section-header__subtitle,
+  .collection .collection__title .collection__description,
+  .multicolumn .multicolumn__subtitle,
+  .blog .blog__subtitle,
+  .blog .title-wrapper-with-link .blog__subtitle {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+  }
+  .ts-category-list .section-header__subtitle {
+    margin-bottom: var(--ts-cat-subtitle-mb-sp) !important;
+  }
+  /* TS: SP でもタイトルとサブタイトルの行間を詰める */
+  .multicolumn .title-wrapper-with-link,
+  .blog .title-wrapper-with-link {
+    row-gap: 0 !important;
   }
 }
 
@@ -5340,41 +5529,8 @@ body.template-collection .ts-fsf-tags .ts-fsf-tags__item{
   box-sizing: border-box !important;
 }
 
-/* --- 2) 価格末尾の "JPY" を隠す（表示が ¥21,000 JPY のため） ---
-   注意：JPYが別要素ではなくテキスト直書きなので、擬似要素で置換します。
-*/
-body.template-collection .price-item{
-  font-size: inherit;
-}
-
-body.template-collection .price-item{
-  position: relative !important;
-  color: transparent !important; /* 元テキストを隠す */
-}
-
-body.template-collection .price-item::before{
-  content: attr(data-ts-price) !important; /* data属性が無いので次のルールで上書き */
-  color: currentColor !important;
-}
-
-/* data属性が無い環境向け：JPYを含まない表示を “そのまま” は作れないため、
-   ここでは「JPYの部分だけを消す」代替として、JPYの3文字をマスクします。
-   ※文字数が固定でない通貨表記のため、完全保証にはLiquid側対応が必要です。
-*/
-body.template-collection .price-item{
-  color: currentColor !important; /* いったん戻す */
-}
-
-/* "JPY" だけを消す（JPYが末尾で、かつスペース区切りの想定） */
-body.template-collection .price-item{
-  font-variant-numeric: tabular-nums;
-}
-body.template-collection .price-item{
-  /* 末尾の JPY を視覚的に消す（フォント色を背景と同化） */
-}
-body.template-collection .price-item{
-  /* 最終手段ではなく、まず下の span を追加できるか確認したいので、ここでは保留 */
-}
+/* TS: JPY 非表示は CSS のみでは完全対応不可。
+   Liquid テンプレートで {{ price | money_without_currency_iso }} フィルタを使用すること。 */
 
 /* =========================
    TS: FSF-like tag BOX (FORCE)
@@ -5559,13 +5715,15 @@ main#MainContent .related-products__heading{
    Place at VERY END of base.css
    ========================= */
 
-/* サムネイルの“列/行”そのものを下に押し下げる（最優先） */
-main#MainContent .thumbnail-slider,
-main#MainContent .thumbnail-list{
-  margin-top: 22px !important; /* ←まずはここだけ広げる */
+/* デスクトップ：サムネイルを下に押し下げる */
+@media screen and (min-width: 750px) {
+  main#MainContent .thumbnail-slider,
+  main#MainContent .thumbnail-list {
+    margin-top: 22px !important;
+  }
 }
 
-/* 念のため：ギャラリー全体の下側も少し確保（影響少なめ） */
+/* ギャラリーリストの下側に余白確保 */
 main#MainContent .product__media-list{
   margin-bottom: 18px !important;
 }
@@ -5795,4 +5953,16 @@ body.template-cart td.cart-item__details dl .product-option{
     margin-left:auto;
     margin-right:auto;
   }
+}
+
+/* TS: SP横スクロール防止 - スライダー以外での意図しない横スワイプを禁止 */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* スライダーコンポーネントは横スクロールを許可（JS制御のため影響なし） */
+slider-component {
+  overflow: revert;
 }

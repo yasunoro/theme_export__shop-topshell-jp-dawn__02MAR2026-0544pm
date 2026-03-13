@@ -14,9 +14,22 @@ if (!customElements.get('media-gallery')) {
 
         this.elements.viewer.addEventListener('slideChanged', debounce(this.onSlideChanged.bind(this), 500));
         this.elements.thumbnails.querySelectorAll('[data-target]').forEach((mediaToSwitch) => {
-          mediaToSwitch
-            .querySelector('button')
-            .addEventListener('click', this.setActiveMedia.bind(this, mediaToSwitch.dataset.target, false));
+          const btn = mediaToSwitch.querySelector('button');
+          btn.addEventListener('click', this.setActiveMedia.bind(this, mediaToSwitch.dataset.target, false));
+          // SP タッチ対応: スクロール中は除外してタップのみ切り替え
+          let touchStartX = 0, touchStartY = 0;
+          btn.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+          }, { passive: true });
+          btn.addEventListener('touchend', (e) => {
+            const dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
+            const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+            if (dx < 10 && dy < 10) {
+              e.preventDefault();
+              this.setActiveMedia(mediaToSwitch.dataset.target, false);
+            }
+          });
         });
         if (this.dataset.desktopLayout.includes('thumbnail') && this.mql.matches) this.removeListSemantic();
       }
