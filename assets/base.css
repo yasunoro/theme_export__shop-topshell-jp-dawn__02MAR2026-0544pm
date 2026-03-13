@@ -4417,7 +4417,7 @@ details-disclosure > details {
   }
 
   /* カード設定（縦積み） */
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card {
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -4429,14 +4429,14 @@ details-disclosure > details {
   }
 
   /* 画像（上側）: imgに直接aspect-ratio指定（wrapperのheight問題を回避） */
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__image-wrapper {
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__image-wrapper {
     order: -1 !important;
     width: 100% !important;
     overflow: hidden !important;
     margin: 0 0 15px 0 !important;
   }
 
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__image-wrapper img {
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__image-wrapper img {
     width: 100% !important;
     height: auto !important;
     aspect-ratio: 1 / 1 !important;
@@ -4446,7 +4446,7 @@ details-disclosure > details {
   }
 
   /* テキスト（下側） */
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__info {
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__info {
     order: 1 !important;
     text-align: left !important;
     width: 100% !important;
@@ -4454,9 +4454,9 @@ details-disclosure > details {
   }
 
   /* タイトル: BLOGに合わせたフォントサイズ・ウェイト */
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__heading,
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__info h3,
-  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-card__info a {
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__heading,
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__info h3,
+  .section-template--20939988861161__multicolumn_6e9cGq-padding .multicolumn-list__item .multicolumn-card__info a {
     font-size: 20px !important;
     font-weight: 400 !important;
     line-height: 1.4 !important;
