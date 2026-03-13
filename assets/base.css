@@ -4319,12 +4319,18 @@ details-disclosure > details {
    ・カード：横並び（左画像・右テキスト）
    ========================================================= */
 @media screen and (max-width: 749px) {
+  /* slider-mobile-gutter が section-multicolumn.css で padding: 1.5rem を追加するため打ち消す */
+  #shopify-section-template--20939988861161__multicolumn_6e9cGq .slider-mobile-gutter {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   /* リスト設定 */
   #shopify-section-template--20939988861161__multicolumn_6e9cGq .multicolumn-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 20px !important;
-    padding: 0 !important; /* BLOGに寄せて左端まで */
+    padding: 0 !important;
     margin: 0 !important;
   }
 
