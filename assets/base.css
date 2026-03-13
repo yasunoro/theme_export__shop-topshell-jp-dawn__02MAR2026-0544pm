@@ -4256,12 +4256,9 @@ details-disclosure > details {
   background-color: #ffffff !important;
 }
 
-/* TS: BLOG section タイトルとサブタイトルの間隔を FEATURE に合わせる */
-.blog-section-wrapper .title-wrapper-with-link {
+/* TS: BLOG section タイトルとサブタイトルの間隔を CATEGORY に合わせる */
+.blog .title-wrapper-with-link {
   row-gap: 0 !important;
-}
-.blog-section-wrapper .title-wrapper-with-link::after {
-  margin-top: 5px !important;
 }
 
 /* 2. タイトルエリア（FEATURE / 特集）のデザイン */
@@ -4280,7 +4277,7 @@ details-disclosure > details {
   font-weight: 400 !important;
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 0 !important;
   color: #000 !important;
 }
 /* PCではタイトルをさらに大きく */
@@ -5397,7 +5394,7 @@ body.template-collection .collection-hero__description{
   font-size: 16px !important;
   font-weight: 600 !important;
   letter-spacing: 0.02em !important;
-  margin: 6px 0 0 0 !important;
+  margin: 10px 0 0 0 !important;
   text-align: center !important;
 }
 .ts-category-list .section-header__subtitle {
@@ -5416,9 +5413,14 @@ body.template-collection .collection-hero__description{
   .blog .title-wrapper-with-link .blog__subtitle {
     font-size: 13px !important;
     font-weight: 700 !important;
+    margin-top: 8px !important;
   }
   .ts-category-list .section-header__subtitle {
     margin-bottom: var(--ts-cat-subtitle-mb-sp) !important;
+  }
+  /* NEW ARRIVALS SP: title margin-bottom を 8px に合わせる */
+  #shopify-section-template--20939988861161__featured_collection .title {
+    margin-bottom: 8px !important;
   }
 }
 
