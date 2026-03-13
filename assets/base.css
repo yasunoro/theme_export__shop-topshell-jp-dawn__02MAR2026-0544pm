@@ -5403,19 +5403,10 @@ body.template-collection .collection-hero__description{
 .ts-category-list .section-header__subtitle {
   margin-bottom: var(--ts-cat-subtitle-mb-pc) !important; /* カテゴリーから探すの下を約2行分 */
 }
-/* FEATURE/BLOG: タイトルとサブタイトルの間を詰める */
-.multicolumn .multicolumn__subtitle,
-.blog .blog__subtitle,
-.blog .title-wrapper-with-link .blog__subtitle {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 2px !important;
-}
-/* FEATURE/BLOG: サブタイトル下〜コンテンツ（生地）の余白を同じサイズで少し狭く */
+/* FEATURE/BLOG: サブタイトル下〜コンテンツ（生地）の余白 */
 .multicolumn .title-wrapper-with-link,
 .blog .title-wrapper-with-link {
   margin-bottom: 24px !important;
-  row-gap: 0 !important; /* TS: タイトルとサブタイトルの行間を詰める（PC・SP共通） */
 }
 @media screen and (max-width: 749px) {
   .ts-category-list .section-header__subtitle,
@@ -5428,11 +5419,6 @@ body.template-collection .collection-hero__description{
   }
   .ts-category-list .section-header__subtitle {
     margin-bottom: var(--ts-cat-subtitle-mb-sp) !important;
-  }
-  /* TS: SP でもタイトルとサブタイトルの行間を詰める */
-  .multicolumn .title-wrapper-with-link,
-  .blog .title-wrapper-with-link {
-    row-gap: 0 !important;
   }
 }
 
